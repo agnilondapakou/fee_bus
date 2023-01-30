@@ -7,6 +7,10 @@ class NavBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
+      buttonBackgroundColor: Colors.white,
+      height: 50,
+      index: 1,
+
       // ignore: prefer_const_literals_to_create_immutables
       backgroundColor: const Color(0xFF175F30),
       // ignore: prefer_const_literals_to_create_immutables

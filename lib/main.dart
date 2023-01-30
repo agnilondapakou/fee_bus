@@ -1,4 +1,3 @@
-import 'package:fee_bus/pages/loadingPage.dart';
 import 'package:fee_bus/routes/routes_manager.dart';
 import 'package:flutter/material.dart';
 

@@ -13,32 +13,30 @@ class CrenauxListe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    clipBehavior: Clip.none,
-                    children: [
-                      const HeaderWidget(
-                        color: Color(0xFF175F30),
-                        width: double.infinity,
-                        height: 200,
-                      ),
-                      Positioned(top: 150, child: profileImageWidget()),
-                      Positioned(child: textWidget()),
-                    ],
-                  ),
-                  titleWidget(),
-                  crenauxListeWidget(),
-                  const NavBarWidget()
-                ],
-              ),
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    const HeaderWidget(
+                      color: Color(0xFF175F30),
+                      width: double.infinity,
+                      height: 200,
+                    ),
+                    Positioned(top: 150, child: profileImageWidget()),
+                    Positioned(child: textWidget()),
+                  ],
+                ),
+                titleWidget(),
+                crenauxListeWidget(),
+                const NavBarWidget()
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -82,7 +80,7 @@ Widget crenauxListeWidget() => Container(
       children: [
         // create an loop to generate the list of crenaux
 
-        for (var i = 0; i < 4; i++) ...[
+        for (var i = 0; i < 10; i++) ...[
           const CrenauxWidget(
             itineraire: 'UL - Aéroport',
             heure: '8h - 10h',
