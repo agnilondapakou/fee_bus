@@ -1,7 +1,6 @@
 import 'package:fee_bus/widgets/header_text_widget.dart';
 import 'package:fee_bus/widgets/header_widget.dart';
 import 'package:fee_bus/widgets/nav_bar_widget.dart';
-import 'package:fee_bus/widgets/page_title_widget.dart';
 import 'package:fee_bus/widgets/rounded_header_image_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -29,14 +28,16 @@ class CrenauxDetail extends StatelessWidget {
                     Positioned(child: textWidget()),
                   ],
                 ),
-                titleWidget(),
+                const SizedBox(
+                  height: 50,
+                ),
                 crenauxInfosWidget(),
-                const NavBarWidget()
               ],
             ),
           ],
         ),
       ),
+      bottomNavigationBar: const NavBarWidget(),
     );
   }
 }
@@ -58,16 +59,6 @@ Widget textWidget() => const HeaderTextWidget(
         color: Colors.white,
         fontSize: 19,
         fontWeight: FontWeight.w400,
-      ),
-    );
-
-Widget titleWidget() => const PageTitleWidget(
-      margin: EdgeInsets.only(top: 70),
-      text: 'Lundi 12 Avril 2021',
-      textStyle: TextStyle(
-        color: Colors.black,
-        fontSize: 23,
-        fontWeight: FontWeight.bold,
       ),
     );
 
@@ -95,41 +86,42 @@ Widget crenauxInfosWidget() => Container(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Icon(Icons.directions, color: Colors.grey[600]),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Icon(Icons.date_range, color: Colors.grey[600]),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Icon(Icons.access_time, color: Colors.grey[600]),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Icon(Icons.payments_outlined, color: Colors.grey[600]),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
+              // ignore: prefer_const_literals_to_create_immutables
               children: [
-                Text('Université de Yaoundé I - Yaoundé',
-                    style: const TextStyle(
+                const Text('Université de Yaoundé I - Yaoundé',
+                    style: TextStyle(
                       color: Color.fromARGB(255, 66, 66, 66),
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                     )),
-                SizedBox(height: 15),
-                Text('Lundi 12 Avril 2021',
-                    style: const TextStyle(
+                const SizedBox(height: 15),
+                const Text('Lundi 12 Avril 2021',
+                    style: TextStyle(
                       color: Color.fromARGB(255, 66, 66, 66),
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                     )),
-                SizedBox(height: 15),
-                Text('10:00 - 12:00',
-                    style: const TextStyle(
+                const SizedBox(height: 15),
+                const Text('10:00 - 12:00',
+                    style: TextStyle(
                       color: Color.fromARGB(255, 66, 66, 66),
                       fontSize: 15,
                       fontWeight: FontWeight.w400,
                     )),
-                SizedBox(height: 15),
-                Text('2000 FCFA',
-                    style: const TextStyle(
+                const SizedBox(height: 15),
+                const Text('2000 FCFA',
+                    style: TextStyle(
                       color: Color.fromARGB(255, 66, 66, 66),
                       fontSize: 15,
                       fontWeight: FontWeight.w400,

@@ -33,12 +33,12 @@ class CrenauxListe extends StatelessWidget {
                 ),
                 titleWidget(),
                 crenauxListeWidget(),
-                const NavBarWidget()
               ],
             ),
           ],
         ),
       ),
+      bottomNavigationBar: const NavBarWidget(),
     );
   }
 }

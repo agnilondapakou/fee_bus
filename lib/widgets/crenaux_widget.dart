@@ -40,10 +40,72 @@ class CrenauxWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
+                color: Color(0xFF175F30),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // add road icon
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.date_range,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            '$date',
+                            style: const TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      // fee icon
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const Icon(
+                            Icons.timer,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text('$heure',
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 255, 255, 255),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
                 ),
               ),
               child: Row(
@@ -97,71 +159,6 @@ class CrenauxWidget extends StatelessWidget {
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           )),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                color: Color(0xFF175F30),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // add road icon
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.date_range,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            '$date',
-                            style: const TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      // fee icon
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Icon(
-                            Icons.timer,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Text('$heure',
-                              style: const TextStyle(
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              )),
-                        ],
-                      ),
                     ],
                   ),
                 ],

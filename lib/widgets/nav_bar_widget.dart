@@ -14,11 +14,23 @@ class NavBarWidget extends StatelessWidget {
       // ignore: prefer_const_literals_to_create_immutables
       backgroundColor: const Color(0xFF175F30),
       // ignore: prefer_const_literals_to_create_immutables
-      animationDuration: Duration(milliseconds: 300),
-      color: Color.fromARGB(255, 222, 222, 222),
+      animationDuration: const Duration(milliseconds: 300),
+      color: const Color.fromARGB(255, 222, 222, 222),
+      // ignore: prefer_const_literals_to_create_immutables
       items: [
-        const Icon(Icons.list, size: 30),
-        const Icon(Icons.home, size: 30),
+        IconButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/');
+          },
+          icon: const Icon(Icons.monetization_on_outlined, size: 30),
+        ),
+        IconButton(
+          icon: const Icon(Icons.home, size: 30),
+          onPressed: () {
+            Navigator.pushNamed(context, '/crenauxListe');
+          },
+        ),
+        const Icon(Icons.check_circle_outline, size: 30),
         const Icon(Icons.person, size: 30),
       ],
     );
