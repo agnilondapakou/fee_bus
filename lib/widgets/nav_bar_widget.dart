@@ -18,20 +18,30 @@ class NavBarWidget extends StatelessWidget {
       color: const Color.fromARGB(255, 222, 222, 222),
       // ignore: prefer_const_literals_to_create_immutables
       items: [
+        // IconButton(
+        //   onPressed: () {
+        //     Navigator.pushNamed(context, '/');
+        //   },
+        //   icon: const Icon(Icons.monetization_on_outlined, size: 30),
+        // ),
         IconButton(
+          icon: const Icon(Icons.check_circle_outline, size: 30),
           onPressed: () {
-            Navigator.pushNamed(context, '/');
+            Navigator.pushNamed(context, '/my.crenaux');
           },
-          icon: const Icon(Icons.monetization_on_outlined, size: 30),
         ),
         IconButton(
           icon: const Icon(Icons.home, size: 30),
           onPressed: () {
-            Navigator.pushNamed(context, '/crenauxListe');
+            Navigator.pushNamed(context, '/crenaux.liste');
           },
         ),
-        const Icon(Icons.check_circle_outline, size: 30),
-        const Icon(Icons.person, size: 30),
+        IconButton(
+          icon: const Icon(Icons.person, size: 30),
+          onPressed: () {
+            Navigator.pushNamed(context, '/profile');
+          },
+        ),
       ],
     );
   }

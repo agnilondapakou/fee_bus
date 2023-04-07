@@ -8,7 +8,7 @@ class CrenauxWidget extends StatelessWidget {
   final String? bus;
   final String? prix;
   const CrenauxWidget(
-      {Key? key, this.itineraire, this.heure, this.date, this.bus, this.prix})
+      {Key? key, this.itineraire, this.heure, this.date, this.bus, this.prix, required String statut})
       : super(key: key);
 
   @override
@@ -154,7 +154,7 @@ class CrenauxWidget extends StatelessWidget {
                         color: Color.fromARGB(255, 148, 148, 148),
                       ),
                       Text('$prix',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color.fromARGB(255, 53, 53, 53),
                             fontSize: 15,
                             fontWeight: FontWeight.bold,

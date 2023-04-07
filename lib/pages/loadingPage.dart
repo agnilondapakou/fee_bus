@@ -13,7 +13,7 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/crenauxListe');
+      Navigator.pushReplacementNamed(context, '/crenaux.liste');
     });
     super.initState();
   }

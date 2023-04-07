@@ -1,14 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:fee_bus/widgets/crenaux_widget.dart';
 import 'package:fee_bus/widgets/header_widget.dart';
 import 'package:fee_bus/widgets/nav_bar_widget.dart';
 import 'package:fee_bus/widgets/page_title_widget.dart';
-import 'package:flutter/material.dart';
-
 import '../widgets/header_text_widget.dart';
 import '../widgets/rounded_header_image_widget.dart';
 
-class CrenauxListe extends StatelessWidget {
-  const CrenauxListe({super.key});
+class HistoriqueProfil extends StatelessWidget {
+  const HistoriqueProfil({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class CrenauxListe extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     const HeaderWidget(
-                      color: Color(0xFF175F30),
+                      color: Color(0xFF0A4903),
                       width: double.infinity,
                       height: 200,
                     ),
@@ -54,18 +53,18 @@ Widget profileImageWidget() => const RoundedHeaderWidget(
 
 Widget textWidget() => const HeaderTextWidget(
       margin: EdgeInsets.all(25),
-      text: 'Fee Bus, votre application de réservation de crenaux',
+      text: 'Votre historique',
       textAlign: TextAlign.center,
       textStyle: TextStyle(
         color: Colors.white,
-        fontSize: 19,
+        fontSize: 22,
         fontWeight: FontWeight.w400,
       ),
     );
 
 Widget titleWidget() => const PageTitleWidget(
       margin: EdgeInsets.only(top: 70),
-      text: 'Liste des crenaux',
+      text: 'Historique',
       textStyle: TextStyle(
         color: Colors.black,
         fontSize: 23,
@@ -74,22 +73,20 @@ Widget titleWidget() => const PageTitleWidget(
     );
 
 Widget crenauxListeWidget() => Container(
-      margin: const EdgeInsets.only(top: 10),
-      child: Column(
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          // create an loop to generate the list of crenaux
+    margin: const EdgeInsets.only(top: 10),
+    child: Column(
+      // ignore: prefer_const_literals_to_create_immutables
+      children: [
+        // create an loop to generate the list of crenaux
 
-          for (var i = 0; i < 10; i++) ...[
-            const CrenauxWidget(
-              itineraire: 'UL - Aéroport',
-              heure: '8h - 10h',
+        for (var i = 0; i < 10; i++) ...[
+          const CrenauxWidget(
+              itineraire: 'LBS - Agbalepedo',
+              heure: '9h - 10h',
               date: '12/12/2021',
-              bus: 'Bus 1',
-              prix: '1000 FCFA',
-              statut: 'Disponible',
-            ),
-          ],
+              bus: 'Bus 33',
+              prix: '700 FCFA',
+              statut: 'acheté'),
         ],
-      ),
-    );
+      ],
+    ));
