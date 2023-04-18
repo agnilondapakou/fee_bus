@@ -3,6 +3,7 @@ import 'package:fee_bus/widgets/header_widget.dart';
 import 'package:fee_bus/widgets/nav_bar_widget.dart';
 import 'package:fee_bus/widgets/rounded_header_image_widget.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class PaymentDetails extends StatelessWidget {

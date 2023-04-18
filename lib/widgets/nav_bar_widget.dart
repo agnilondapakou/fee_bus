@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class NavBarWidget extends StatelessWidget {
   int index = 1;
   NavBarWidget({required this.index, Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class NavBarWidget extends StatelessWidget {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.check_circle_outline_rounded),
-          label: 'Business',
+          label: 'Mes creneaux',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
@@ -18,7 +19,7 @@ class NavBarWidget extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_outline_rounded),
-          label: 'School',
+          label: 'Profile',
         ),
       ],
       currentIndex: index,
