@@ -22,7 +22,7 @@ class HistoriqueProfil extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     const HeaderWidget(
-                      color: Color(0xFF0A4903),
+                      color: Color(0xFF175F30),
                       width: double.infinity,
                       height: 200,
                     ),
@@ -37,7 +37,7 @@ class HistoriqueProfil extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarWidget(),
+      bottomNavigationBar: NavBarWidget(index: 0),
     );
   }
 }

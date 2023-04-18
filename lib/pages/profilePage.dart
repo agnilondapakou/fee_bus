@@ -11,8 +11,8 @@ class ProfilClient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green[800],
-        bottomNavigationBar: const NavBarWidget(),
+        backgroundColor: const Color(0xFF175F30),
+        bottomNavigationBar: NavBarWidget(index: 2),
         body: SafeArea(
           minimum: const EdgeInsets.only(top: 100),
           child: Column(

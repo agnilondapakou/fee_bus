@@ -1,3 +1,4 @@
+
 import 'package:fee_bus/widgets/header_text_widget.dart';
 import 'package:fee_bus/widgets/header_widget.dart';
 import 'package:fee_bus/widgets/nav_bar_widget.dart';
@@ -31,13 +32,122 @@ class CrenauxDetail extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                crenauxInfosWidget(),
+                Container(
+                  margin: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.directions, color: Colors.grey[600]),
+                              const SizedBox(height: 10),
+                              Icon(Icons.date_range, color: Colors.grey[600]),
+                              const SizedBox(height: 10),
+                              Icon(Icons.access_time, color: Colors.grey[600]),
+                              const SizedBox(height: 10),
+                              Icon(Icons.payments_outlined,
+                                  color: Colors.grey[600]),
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // ignore: prefer_const_literals_to_create_immutables
+                            children: [
+                              const Text('Université de Yaoundé I - Yaoundé',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 66, 66, 66),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              const SizedBox(height: 15),
+                              const Text('Lundi 12 Avril 2021',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 66, 66, 66),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              const SizedBox(height: 15),
+                              const Text('10:00 - 12:00',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 66, 66, 66),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                              const SizedBox(height: 15),
+                              const Text('2000 FCFA',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 66, 66, 66),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                  )),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      // create a button
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF175F30),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 50, vertical: 15),
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/payment.details');
+                        },
+                        child: const Text('Acheter'),
+                      ),
+                      // separator
+                      const SizedBox(height: 20),
+                      const Divider(
+                        color: Colors.grey,
+                        height: 20,
+                        thickness: 1,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      const SizedBox(height: 8),
+                      const Icon(Icons.info_outline, color: Colors.red),
+                      const SizedBox(height: 8),
+                      const Text(
+                          'lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam luctus, nunc nisl aliquam nisl, eget aliquam nisl nunc eget nisl. ',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 66, 66, 66),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          )),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarWidget(),
+      bottomNavigationBar: NavBarWidget(index: 1),
     );
   }
 }
@@ -63,106 +173,107 @@ Widget textWidget() => const HeaderTextWidget(
     );
 
 Widget crenauxInfosWidget() => Container(
-    margin: const EdgeInsets.all(20),
-    padding: const EdgeInsets.all(20),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(10),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
-          spreadRadius: 5,
-          blurRadius: 7,
-          offset: const Offset(0, 3), // changes position of shadow
-        ),
-      ],
-    ),
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.directions, color: Colors.grey[600]),
-                const SizedBox(height: 10),
-                Icon(Icons.date_range, color: Colors.grey[600]),
-                const SizedBox(height: 10),
-                Icon(Icons.access_time, color: Colors.grey[600]),
-                const SizedBox(height: 10),
-                Icon(Icons.payments_outlined, color: Colors.grey[600]),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                const Text('Université de Yaoundé I - Yaoundé',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 66, 66),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    )),
-                const SizedBox(height: 15),
-                const Text('Lundi 12 Avril 2021',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 66, 66),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    )),
-                const SizedBox(height: 15),
-                const Text('10:00 - 12:00',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 66, 66),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    )),
-                const SizedBox(height: 15),
-                const Text('2000 FCFA',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 66, 66),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    )),
-              ],
-            ),
-          ],
-        ),
-        const SizedBox(height: 20),
-        // create a button
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF175F30),
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            textStyle: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3), // changes position of shadow
           ),
-          onPressed: () {},
-          child: const Text('Acheter'),
-        ),
-        // separator
-        const SizedBox(height: 20),
-        const Divider(
-          color: Colors.grey,
-          height: 20,
-          thickness: 1,
-          indent: 20,
-          endIndent: 20,
-        ),
-        const SizedBox(height: 8),
-        const Icon(Icons.info_outline, color: Colors.red),
-        const SizedBox(height: 8),
-        const Text(
-            'lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam luctus, nunc nisl aliquam nisl, eget aliquam nisl nunc eget nisl. ',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color.fromARGB(255, 66, 66, 66),
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-            )),
-      ],
-    ));
+        ],
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.directions, color: Colors.grey[600]),
+                  const SizedBox(height: 10),
+                  Icon(Icons.date_range, color: Colors.grey[600]),
+                  const SizedBox(height: 10),
+                  Icon(Icons.access_time, color: Colors.grey[600]),
+                  const SizedBox(height: 10),
+                  Icon(Icons.payments_outlined, color: Colors.grey[600]),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const Text('Université de Yaoundé I - Yaoundé',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 66, 66, 66),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  const SizedBox(height: 15),
+                  const Text('Lundi 12 Avril 2021',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 66, 66, 66),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  const SizedBox(height: 15),
+                  const Text('10:00 - 12:00',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 66, 66, 66),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      )),
+                  const SizedBox(height: 15),
+                  const Text('2000 FCFA',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 66, 66, 66),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      )),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(height: 20),
+          // create a button
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF175F30),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              textStyle: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onPressed: () {},
+            child: const Text('Acheter'),
+          ),
+          // separator
+          const SizedBox(height: 20),
+          const Divider(
+            color: Colors.grey,
+            height: 20,
+            thickness: 1,
+            indent: 20,
+            endIndent: 20,
+          ),
+          const SizedBox(height: 8),
+          const Icon(Icons.info_outline, color: Colors.red),
+          const SizedBox(height: 8),
+          const Text(
+              'lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam luctus, nunc nisl aliquam nisl, eget aliquam nisl nunc eget nisl. ',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color.fromARGB(255, 66, 66, 66),
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+              )),
+        ],
+      ),
+    );
